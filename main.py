@@ -48,6 +48,16 @@ def editar_servicio(datos):
             print("Servicio fotográfico editado exitosamente.")
             return
     print("Servicio no encontrado.")
+    
+def eliminar_servicio(datos):
+    id_servicio = input("Ingrese el ID del servicio a eliminar: ")
+    for servicio in datos:
+        if servicio["id"] == id_servicio:
+            datos.remove(servicio)
+            guardar_datos(datos)
+            print("Servicio fotográfico eliminado exitosamente.")
+            return
+    print("Servicio no encontrado.")
 
 def separador():
     print("-" * 30)
