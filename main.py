@@ -68,3 +68,20 @@ def menu():
     print("3. Eliminar servicio fotográfico")
     print("4. Salir")
 
+while True:
+    datos = cargar_datos()
+    mostrar_servicios(datos)
+    menu()
+    opcion = input("Seleccione una opción: ")
+    
+    if opcion == "1":
+        agregar_servicio(datos)
+    elif opcion == "2":
+        editar_servicio(datos)
+    elif opcion == "3":
+        eliminar_servicio(datos)
+    elif opcion == "4":
+        print("Saliendo del programa.")
+        break
+    else:
+        print("Opción no válida. Por favor, intente nuevamente.")
