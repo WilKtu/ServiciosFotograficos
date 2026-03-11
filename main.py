@@ -37,6 +37,18 @@ def mostrar_servicios(datos):
         print(f"Precio: ${servicio['precio']}")
         separador()
 
+def editar_servicio(datos):
+    id_servicio = input("Ingrese el ID del servicio a editar: ")
+    for servicio in datos:
+        if servicio["id"] == id_servicio:
+            servicio["nombre"] = input("Ingrese el nuevo nombre del servicio: ")
+            servicio["descripcion"] = input("Ingrese la nueva descripción del servicio: ")
+            servicio["precio"] = float(input("Ingrese el nuevo precio del servicio: "))
+            guardar_datos(datos)
+            print("Servicio fotográfico editado exitosamente.")
+            return
+    print("Servicio no encontrado.")
+
 def separador():
     print("-" * 30)
 
